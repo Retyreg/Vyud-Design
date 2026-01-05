@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VYUD AI - Brand Identity Architect</title>
+    <!-- Подключаем стили Tailwind CSS (для красоты) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Подключаем библиотеку для графиков Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <!-- Шрифты: Inter (основной) и JetBrains Mono (для кода) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; color: #111827; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        /* Контейнер для графика, чтобы не плыл */
+        .chart-container { position: relative; width: 100%; max-width: 600px; margin: 0 auto; height: 350px; max-height: 400px; }
+        .card { background: white; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); transition: transform 0.2s; }
+        .card:hover { transform: translateY(-2px); }
+        /* Кастомный стиль для ползунков */
+        .slider-thumb { -webkit-appearance: none; appearance: none; width: 100%; height: 8px; border-radius: 5px; background: #e5e7eb; outline: none; }
+        .slider-thumb::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #4f46e5; cursor: pointer; }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen">
+
+    <!-- Навигация -->
+    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center gap-3">
+                    <div class="h-8 w-8 bg-black text-white flex items-center justify-center font-bold rounded">V</div>
+                    <span class="font-bold text-xl tracking-tight">VYUD AI <span class="text-slate-400 font-normal text-sm ml-2">Brand Architect</span></span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-sm text-slate-500 hidden sm:block">Role: Dmitry (CTO)</span>
+                    <button class="bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-700 transition" onclick="alert('Configuration Saved! Ready for design phase.')">Save Brief</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+
+        <!-- Заголовок -->
+        <header class="text-center max-w-3xl mx-auto">
+            <div class="inline-block bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full text-xs font-semibold mb-4 tracking-wide uppercase">MVP to Unicorn Protocol</div>
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">Let's define our face, Partner.</h1>
+            <p class="text-lg text-slate-600">We have the stack (Python, Streamlit, Supabase). We have the moat (Speed). Now we need a visual identity that screams "Unicorn" without slowing us down.</p>
+        </header>
+
+        <!-- Секция 1: Фундамент (Анализ контекста) -->
+        <section>
+            <div class="mb-6 border-l-4 border-indigo-500 pl-4">
+                <h2 class="text-2xl font-bold text-slate-900">1. The Foundation</h2>
+                <p class="text-slate-500">Analysis of our current constraints and advantages based on the source data.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Карточка 1 -->
+                <div class="card p-6 border border-slate-100">
+                    <div class="h-10 w-10 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mb-4 text-xl">⚡</div>
+                    <h3 class="font-bold text-lg mb-2">The Moat: Speed</h3>
+                    <p class="text-sm text-slate-600 mb-4">We are not a bloated LMS. We are instant. From file to course in seconds.</p>
+                    <div class="bg-slate-50 p-3 rounded text-xs font-mono text-slate-500">
+                        Design Implication: <span class="text-slate-900 font-bold">Minimalism, Motion, High Contrast.</span>
+                    </div>
+                </div>
+
+                <!-- Карточка 2 -->
+                <div class="card p-6 border border-slate-100">
+                    <div class="h-10 w-10 bg-purple-50 text-purple-600 rounded-lg flex items-center justify-center mb-4 text-xl">📱</div>
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-bold text-lg mb-2">Mobile-First (TG)</h3>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-4">Our core is the Telegram Bot. The web app is secondary but must match the simplicity.</p>
+                    <div class="bg-slate-50 p-3 rounded text-xs font-mono text-slate-500">
+                        Design Implication: <span class="text-slate-900 font-bold">Big typography, Card-based UI, Vertical layouts.</span>
+                    </div>
+                </div>
+
+                <!-- Карточка 3 -->
+                <div class="card p-6 border border-slate-100">
+                    <div class="h-10 w-10 bg-emerald-50 text-emerald-600 rounded-lg flex items-center justify-center mb-4 text-xl">🛠</div>
+                    <h3 class="font-bold text-lg mb-2">The Stack (Streamlit)</h3>
+                    <p class="text-sm text-slate-600 mb-4">We use Streamlit & Python. We cannot do crazy custom animations easily.</p>
+                    <div class="bg-slate-50 p-3 rounded text-xs font-mono text-slate-500">
+                        Design Implication: <span class="text-slate-900 font-bold">Grid systems, Standard components, Clean colors.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция 2: Личность бренда (Интерактивный радар) -->
+        <section class="bg-white rounded-2xl p-8 shadow-sm border border-slate-200">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-1 space-y-6">
+                    <div class="border-l-4 border-indigo-500 pl-4">
+                        <h2 class="text-2xl font-bold text-slate-900">2. Brand Personality</h2>
+                        <p class="text-slate-500 text-sm mt-2">Adjust the sliders to define the "Soul" of VYUD AI. This will update the chart.</p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">
+                                <span>Playful</span>
+                                <span>Serious</span>
+                            </div>
+                            <input type="range" min="0" max="100" value="70" class="slider-thumb w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer" id="slider-seriousness">
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">
+                                <span>Classic</span>
+                                <span>Futuristic</span>
+                            </div>
+                            <input type="range" min="0" max="100" value="85" class="slider-thumb w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer" id="slider-futurism">
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">
+                                <span>Luxury</span>
+                                <span>Accessible</span>
+                            </div>
+                            <input type="range" min="0" max="100" value="60" class="slider-thumb w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer" id="slider-accessibility">
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">
+                                <span>Chaos (Creative)</span>
+                                <span>Order (Structured)</span>
+                            </div>
+                            <input type="range" min="0" max="100" value="90" class="slider-thumb w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer" id="slider-structure">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-2 flex flex-col justify-center items-center bg-slate-50 rounded-xl p-4">
+                    <h3 class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4">Personality Footprint</h3>
+                    <div class="chart-container">
+                        <canvas id="personalityChart"></canvas>
+                    </div>
+                    <p id="personality-desc" class="text-center text-sm text-slate-600 mt-4 italic">"A serious, highly structured, and futuristic tool."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция 3: Визуальное направление -->
+        <section>
+            <div class="mb-6 border-l-4 border-indigo-500 pl-4 flex justify-between items-end">
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-900">3. Visual Direction</h2>
+                    <p class="text-slate-500">Select a design system that fits our stack constraints.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Стиль A: Терминал -->
+                <div class="group cursor-pointer" onclick="selectStyle(this, 'terminal')">
+                    <div class="relative overflow-hidden rounded-t-xl bg-slate-900 h-40 p-4 border-t border-x border-slate-900 group-hover:opacity-90 transition">
+                        <div class="font-mono text-green-400 text-xs mb-2">> initializing_vyud...</div>
+                        <div class="font-mono text-green-400 text-xs mb-2">> core_loaded: 100%</div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-white font-mono text-xl font-bold">The Terminal</h3>
+                        </div>
+                        <div class="absolute top-2 right-2 h-2 w-2 bg-green-500 rounded-full animate-pulse"></div>
+                    </div>
+                    <div class="bg-white p-6 rounded-b-xl border border-slate-200 border-t-0 shadow-sm">
+                        <p class="text-sm text-slate-600 mb-3">Inspired by our Python/CLI roots. Dark mode default, monospaced fonts, high contrast neon accents.</p>
+                        <div class="flex gap-2">
+                            <div class="h-6 w-6 rounded bg-slate-900"></div>
+                            <div class="h-6 w-6 rounded bg-green-500"></div>
+                            <div class="h-6 w-6 rounded bg-slate-700"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Стиль B: SaaS (Выбран по умолчанию в дизайне) -->
+                <div class="group cursor-pointer ring-4 ring-indigo-500 ring-offset-2 rounded-xl" onclick="selectStyle(this, 'saas')">
+                    <div class="relative overflow-hidden rounded-t-xl bg-white h-40 p-4 border-t border-x border-slate-200 group-hover:opacity-90 transition">
+                        <div class="absolute top-4 right-4">
+                            <div class="bg-indigo-100 text-indigo-700 text-xs px-2 py-1 rounded font-semibold">B2B Ready</div>
+                        </div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-slate-900 font-sans text-xl font-bold tracking-tight">Modern SaaS</h3>
+                        </div>
+                        <!-- Абстрактные фигуры -->
+                        <div class="absolute -right-4 -bottom-8 h-24 w-24 bg-indigo-50 rounded-full"></div>
+                        <div class="absolute right-12 top-8 h-8 w-8 bg-blue-50 rounded-full"></div>
+                    </div>
+                    <div class="bg-white p-6 rounded-b-xl border border-slate-200 border-t-0 shadow-sm">
+                        <p class="text-sm text-slate-600 mb-3">Clean, white, trustworthy. Uses 'Inter' font. Focus on clarity and ease of use. Fits Streamlit perfectly.</p>
+                        <div class="flex gap-2">
+                            <div class="h-6 w-6 rounded bg-white border border-slate-200"></div>
+                            <div class="h-6 w-6 rounded bg-indigo-600"></div>
+                            <div class="h-6 w-6 rounded bg-slate-400"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Стиль C: Креативный -->
+                <div class="group cursor-pointer" onclick="selectStyle(this, 'creative')">
+                    <div class="relative overflow-hidden rounded-t-xl bg-gradient-to-br from-orange-400 to-purple-600 h-40 p-4 border-t border-x border-transparent group-hover:opacity-90 transition">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="font-bold text-xl italic">The Catalyst</h3>
+                        </div>
+                        <div class="absolute top-0 right-0 p-4 opacity-50">
+                            <div class="text-4xl">⚡</div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-b-xl border border-slate-200 border-t-0 shadow-sm">
+                        <p class="text-sm text-slate-600 mb-3">Energetic, bold gradients. Represents the "Transformation" of data into learning. Aggressive marketing.</p>
+                        <div class="flex gap-2">
+                            <div class="h-6 w-6 rounded bg-orange-500"></div>
+                            <div class="h-6 w-6 rounded bg-purple-600"></div>
+                            <div class="h-6 w-6 rounded bg-white border"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Секция 4: Логотип -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white rounded-2xl p-8 border border-slate-200">
+                <div class="border-l-4 border-indigo-500 pl-4 mb-6">
+                    <h2 class="text-2xl font-bold text-slate-900">4. Logo Symbolism</h2>
+                    <p class="text-slate-500">What concept should the logo represent?</p>
+                </div>
+                <div class="space-y-3">
+                    <label class="flex items-center p-3 border border-slate-200 rounded-lg cursor-pointer hover:bg-slate-50">
+                        <input type="radio" name="logo_concept" class="h-5 w-5 text-indigo-600 focus:ring-indigo-500 border-gray-300" checked>
+                        <div class="ml-3">
+                            <span class="block text-sm font-medium text-slate-900">Transformation / Synthesis</span>
+                            <span class="block text-xs text-slate-500">Abstract shapes merging (Documents -> Knowledge)</span>
+                        </div>
+                    </label>
+                    <label class="flex items-center p-3 border border-slate-200 rounded-lg cursor-pointer hover:bg-slate-50">
+                        <input type="radio" name="logo_concept" class="h-5 w-5 text-indigo-600 focus:ring-indigo-500 border-gray-300">
+                        <div class="ml-3">
+                            <span class="block text-sm font-medium text-slate-900">Speed / Lightning</span>
+                            <span class="block text-xs text-slate-500">Sharp angles, forward momentum arrows</span>
+                        </div>
+                    </label>
+                    <label class="flex items-center p-3 border border-slate-200 rounded-lg cursor-pointer hover:bg-slate-50">
+                        <input type="radio" name="logo_concept" class="h-5 w-5 text-indigo-600 focus:ring-indigo-500 border-gray-300">
+                        <div class="ml-3">
+                            <span class="block text-sm font-medium text-slate-900">Minimal Monogram (V)</span>
+                            <span class="block text-xs text-slate-500">Strong typography, clean 'V' symbol</span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Технический чек-лист -->
+            <div class="bg-slate-900 text-slate-300 rounded-2xl p-8 font-mono text-sm relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-4 opacity-10 text-6xl">
+                    ⌨️
+                </div>
+                <h3 class="text-white font-bold text-lg mb-4 border-b border-slate-700 pb-2">Technical Constraints Check</h3>
+                <ul class="space-y-3">
+                    <li class="flex items-center gap-2">
+                        <span class="text-green-500">✔</span> 
+                        <span>Streamlit Sidebar: Uses standard width</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <span class="text-green-500">✔</span> 
+                        <span>Font Support: Google Fonts (Inter/Roboto)</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <span class="text-green-500">✔</span> 
+                        <span>Dark Mode: Native support via config</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <span class="text-yellow-500">⚠</span> 
+                        <span>Custom CSS: Possible but keep simple</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <span class="text-blue-400">ℹ</span> 
+                        <span>Favicon: Needs SVG or PNG export</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-10 mt-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-slate-400 text-sm">VYUD AI Internal Design Tool • Generated by Canvas Create</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Логика -->
+    <script>
+        // --- 1. Логика выбора стиля ---
+        function selectStyle(element, styleName) {
+            // Убираем выделение со всех
+            const options = document.querySelectorAll('.group');
+            options.forEach(opt => {
+                opt.classList.remove('ring-4', 'ring-indigo-500', 'ring-offset-2', 'rounded-xl');
+                opt.classList.add('cursor-pointer');
+            });
+
+            // Добавляем выделение выбранному
+            element.classList.add('ring-4', 'ring-indigo-500', 'ring-offset-2', 'rounded-xl');
+            
+            // Визуальный отклик на кнопке сохранения
+            const btn = document.querySelector('button');
+            btn.innerText = `Save Brief (${styleName})`;
+            btn.classList.add('animate-pulse');
+            setTimeout(() => btn.classList.remove('animate-pulse'), 500);
+        }
+
+        // --- 2. Инициализация графика (Chart.js) ---
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('personalityChart').getContext('2d');
+            
+            // Начальные данные
+            const initialData = [70, 85, 60, 90]; 
+            
+            const personalityChart = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: ['Seriousness', 'Futurism', 'Accessibility', 'Structure'],
+                    datasets: [{
+                        label: 'VYUD AI Brand DNA',
+                        data: initialData,
+                        fill: true,
+                        backgroundColor: 'rgba(79, 70, 229, 0.2)', 
+                        borderColor: 'rgb(79, 70, 229)',
+                        pointBackgroundColor: 'rgb(79, 70, 229)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgb(79, 70, 229)'
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: { color: '#e2e8f0' },
+                            grid: { color: '#e2e8f0' },
+                            pointLabels: {
+                                font: { size: 12, family: "'Inter', sans-serif", weight: 'bold' },
+                                color: '#64748b'
+                            },
+                            suggestedMin: 0,
+                            suggestedMax: 100,
+                            ticks: { display: false }
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.label + ': ' + context.raw + '%';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // --- 3. Интерактивность: Обновление графика слайдерами ---
+            const sliders = {
+                'slider-seriousness': 0,
+                'slider-futurism': 1,
+                'slider-accessibility': 2,
+                'slider-structure': 3
+            };
+
+            const descElement = document.getElementById('personality-desc');
+
+            function updateChart() {
+                const newData = [
+                    document.getElementById('slider-seriousness').value,
+                    document.getElementById('slider-futurism').value,
+                    document.getElementById('slider-accessibility').value,
+                    document.getElementById('slider-structure').value
+                ];
+                
+                personalityChart.data.datasets[0].data = newData;
+                personalityChart.update();
+                updateDescription(newData);
+            }
+
+            function updateDescription(data) {
+                let text = "A ";
+                // Простая логика описания
+                text += (data[0] > 75) ? "highly professional, " : (data[0] < 40) ? "playful and casual, " : "balanced, ";
+                text += (data[1] > 80) ? "cutting-edge " : (data[1] < 30) ? "traditional " : "modern ";
+                text += "platform focused on ";
+                text += (data[3] > 70) ? "efficiency and order." : (data[3] < 40) ? "creativity and freedom." : "versatility.";
+
+                descElement.innerText = `"${text}"`;
+            }
+
+            Object.keys(sliders).forEach(id => {
+                document.getElementById(id).addEventListener('input', updateChart);
+            });
+        });
+    </script>
+</body>
+</html>
